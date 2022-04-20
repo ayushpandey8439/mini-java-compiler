@@ -1,0 +1,24 @@
+Grade: 1.0
+
+Documentation
+- Not sure what the purpose of the listings is, you are basically just stating the method signatures
+- An introductary sentence would help the reader; similarly, the connection between some (sub-)sections is abrupt
+- Little justification for design decisions
++ Good level of abstraction
+- Hint: Don't use colons at the end of a heading
++ All relevant aspects are covered
+- Unexpected uppercase letters in sentences ("We")
+
+Reflection
+- Unepxected lowercase words ("i")
+- Some expressions are qualifying your statements in an odd and imprecise way ("I can safely say", "I find X relatively better", " I definitely overlooked", "If i had to implement things", "I tried doing such things")
+- Descriptions are rather high-level, only few examples
+
+Implementation
+Analysis
+- More parameters than expected bug
+- null edge cases
+
+Translator
+- functions can't use fields of objects
+- null edge cases

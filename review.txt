@@ -1,0 +1,51 @@
+- p.2: I got a bit confused by the numbers in the first paragraph, till I realized that they belong to the following list. Maybe add them in parenthesis and make a forward reference to say that they will be explained below?
+- p.2: To which class belong the methods?
+- p.3: 3) Describe the high-level idea first: The first thing done here is cycle detection. Ok, how do you do it? ...
+- extended class = parent class / direct superclass?
+- p.3: 6) Isn't this the visitor for classes *without* an extends clause? How can you here visit the extended class?
+- "For every member in the class, if the class context already contains the member, a type error is generated reporting a duplicate." This forbids shadowing and overriding?!
+
+Example:
+
+class A {
+    int x;
+    int m() {
+        return x;
+    }
+}
+class B{
+    int x;
+    int m() {
+        return x;
+    }
+}
+
+This example shouldn't throw type errors.
+
+- ExprRValue exprLValue?
+- "A reference to this is added to the constructor body." ?
+- "Size of this is calculated from the classStruct generated in step" -> `this` is a reference with a fixed size?
+- For the references, please add the links to the online resources!
+
+
+
+Implementation:
+
+- You compare Strings with the `==` Java operator, that's not good. 
+  You are comparing the reference, not the value, which can have unintended side-effects.
+
+Analysis:
+
+- Field hiding type check works!
+- Not all cases of catching duplicate variable declarations are handled
+- isSubtypeOf in ClassType is a rather ugly implementation 
+- we don't have `null` as a type, why can a type be null? (Maybe that TODO in exprChecker?)
+
+
+Translation:
+
+- Field hiding translation has a bug! 
+- I get "There must be no instruction after a terminating instruction" for some big tests
+- I get "error: element 0 of struct initializer doesn't match struct element type @X_Methods = constant %X_Method_Struct  {" for some big tests
+- There are some object inheritance layout problems "truct Good_Class_Struct does not have a field index 3"
+- Classes using global functions? Other way?
